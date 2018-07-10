@@ -92,7 +92,7 @@ http://graphql.org/graphql-js/
 
 * Mongoose ORM
 
-* Web Sockets
+* Web Sockets (Apollo subscriptions that use Web sockets behind the scene)
 
 * JWT auth
 
@@ -112,6 +112,7 @@ http://graphql.org/graphql-js/
   email      |  String      |  required, unique
   password   |  String      |  required
   avatarUrl  |  String      |
+  role       |  String      |  required
   chats      |  [ObjectId]  |
   createdAt  |  Date        |
   updatedAt  |  Date        |
@@ -144,7 +145,7 @@ http://graphql.org/graphql-js/
 
 ## MongoDB Dev Setup with Docker
 
-> Note: you are free to use a cloud provider, such as mLab or Atlas, instead.
+> Note: coulse easily use other free 3rd party cloud providers, such as mLab or Atlas, instead.
 
 ```sh
 # Start a MongoDB container on port 27017 and create a 'root' user on the 'admin' database

@@ -139,7 +139,7 @@
     "@types/events" "*"
     "@types/node" "*"
 
-accepts@^1.3.0, accepts@^1.3.5, accepts@~1.3.5:
+accepts@^1.3.5, accepts@~1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.5.tgz#eb777df6011723a3b14e8a72c0805c8e86746bd2"
   dependencies:
@@ -192,7 +192,7 @@ apollo-server-caching@^2.0.0-rc.7:
   dependencies:
     lru-cache "^4.1.3"
 
-apollo-server-core@^2.0.0-beta.11, apollo-server-core@^2.0.0-rc.7:
+apollo-server-core@^2.0.0-rc.7:
   version "2.0.0-rc.7"
   resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.0.0-rc.7.tgz#4a85c44ed48bb4fdadc478861821844a41669374"
   dependencies:
@@ -225,7 +225,7 @@ apollo-server-errors@^2.0.0-rc.7:
   version "2.0.0-rc.7"
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.0.0-rc.7.tgz#7562398171e38037b30166b34d6544d0d965304c"
 
-apollo-server-express@^2.0.0-beta.11:
+apollo-server-express@^2.0.0-rc.7:
   version "2.0.0-rc.7"
   resolved "https://registry.yarnpkg.com/apollo-server-express/-/apollo-server-express-2.0.0-rc.7.tgz#8cd3363d9506777b78b292a0777dd2065c17e6c7"
   dependencies:
@@ -243,14 +243,15 @@ apollo-server-express@^2.0.0-beta.11:
     graphql-tools "^3.0.4"
     type-is "^1.6.16"
 
-apollo-server@beta:
-  version "2.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/apollo-server/-/apollo-server-2.0.0-beta.11.tgz#f5fd3a8f171080f938d08637b8006571ca0d1ef3"
+apollo-server@rc:
+  version "2.0.0-rc.7"
+  resolved "https://registry.yarnpkg.com/apollo-server/-/apollo-server-2.0.0-rc.7.tgz#d4506398c5e2ffe66bf746efa5b75db751f0eb14"
   dependencies:
-    apollo-server-core "^2.0.0-beta.11"
-    apollo-server-express "^2.0.0-beta.11"
+    apollo-server-core "^2.0.0-rc.7"
+    apollo-server-express "^2.0.0-rc.7"
     express "^4.0.0"
     graphql-subscriptions "^0.5.8"
+    graphql-tools "^3.0.4"
 
 apollo-tracing@^0.2.0-rc.0:
   version "0.2.0-rc.0"
@@ -340,7 +341,7 @@ content-disposition@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/content-disposition/-/content-disposition-0.5.2.tgz#0cf68bb9ddf5f2be7961c3a85178cb85dba78cb4"
 
-content-type@^1.0.4, content-type@~1.0.4:
+content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
@@ -441,16 +442,7 @@ eventemitter3@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
 
-express-graphql@^0.6.12:
-  version "0.6.12"
-  resolved "https://registry.yarnpkg.com/express-graphql/-/express-graphql-0.6.12.tgz#dfcb2058ca72ed5190b140830ad8cdbf76a9128a"
-  dependencies:
-    accepts "^1.3.0"
-    content-type "^1.0.4"
-    http-errors "^1.3.0"
-    raw-body "^2.3.2"
-
-express@^4.0.0, express@^4.16.3:
+express@^4.0.0:
   version "4.16.3"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
   dependencies:
@@ -582,7 +574,7 @@ http-errors@1.6.2:
     setprototypeof "1.0.3"
     statuses ">= 1.3.1 < 2"
 
-http-errors@1.6.3, http-errors@^1.3.0, http-errors@~1.6.2, http-errors@~1.6.3:
+http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.3.tgz#8b55680bb4be283a0b5bf4ea2e38580be1d9320d"
   dependencies:
@@ -775,7 +767,7 @@ raw-body@2.3.2:
     iconv-lite "0.4.19"
     unpipe "1.0.0"
 
-raw-body@2.3.3, raw-body@^2.3.2:
+raw-body@2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.3.tgz#1b324ece6b5706e153855bc1148c65bb7f6ea0c3"
   dependencies:

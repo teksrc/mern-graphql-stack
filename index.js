@@ -1,105 +1,112 @@
+require ('./src/server')
+
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+
+
 // Creating a standalone GraphQL Server Using the Apollo Client ApolloServer
 
-const {ApolloServer, gql} = require('apollo-server')
-const crypto = require('crypto') // Generate Ids for Users
+// const {ApolloServer, gql} = require('apollo-server')
+// const crypto = require('crypto') // Generate Ids for Users
 
-const fakeDb = {
-  users: [
-    {
-      id: '1',
-      email: 'frankc@gmail.com',
-      name: 'Frank',
-      role: 'Software Engineer',
-      avatarUrl: 'https://gravatar.com/...'
-    },
-    {
-      id: '2',
-      email: 'kristenc@gmail.com',
-      name: 'Kristen',
-      role: 'doTERRA Health Advocate',
-      avatarUrl: 'https://gravatar.com/...'
-    }
-  ],
-  messages: [
-    {
-      id: '1',
-      userId: '1',
-      body: 'Hi from user 1',
-      createdAt: Date.now(),
-    },
-    {
-      id: '2',
-      userId: '2',
-      body: 'Hey from user 2',
-      createdAt: Date.now(),
-    },
-    {
-      id: '3',
-      userId: '1',
-      body: 'How are you? - User 1',
-      createdAt: Date.now(),
-    }
-  ]
-}
+// const fakeDb = {
+//   users: [
+//     {
+//       id: '1',
+//       email: 'frankc@gmail.com',
+//       name: 'Frank',
+//       role: 'Software Engineer',
+//       avatarUrl: 'https://gravatar.com/...'
+//     },
+//     {
+//       id: '2',
+//       email: 'kristenc@gmail.com',
+//       name: 'Kristen',
+//       role: 'doTERRA Health Advocate',
+//       avatarUrl: 'https://gravatar.com/...'
+//     }
+//   ],
+//   messages: [
+//     {
+//       id: '1',
+//       userId: '1',
+//       body: 'Hi from user 1',
+//       createdAt: Date.now(),
+//     },
+//     {
+//       id: '2',
+//       userId: '2',
+//       body: 'Hey from user 2',
+//       createdAt: Date.now(),
+//     },
+//     {
+//       id: '3',
+//       userId: '1',
+//       body: 'How are you? - User 1',
+//       createdAt: Date.now(),
+//     }
+//   ]
+// }
 
-// Basically our Schema
-const typeDefs = gql`
-  type Query {
-    users: [User!]!,
-    user(id: ID!): User,
-    messages: [Message!]!
-  }
+// // Basically our Schema
+// const typeDefs = gql`
+//   type Query {
+//     users: [User!]!,
+//     user(id: ID!): User,
+//     messages: [Message!]!
+//   }
 
-  type Mutation {
-    addUser(email: String!, name: String, role: String!): User
-  }
+//   type Mutation {
+//     addUser(email: String!, name: String, role: String!): User
+//   }
 
-  type User {
-    id: ID!
-    email: String!
-    name: String
-    avatarUrl: String
-    role: String
-    messages: [Message!]!
-  }
+//   type User {
+//     id: ID!
+//     email: String!
+//     name: String
+//     avatarUrl: String
+//     role: String
+//     messages: [Message!]!
+//   }
 
-  type Message {
-    id: ID!
-    body: String!
-    createdAt: String
-  }
-`
+//   type Message {
+//     id: ID!
+//     body: String!
+//     createdAt: String
+//   }
+// `
 
-// My resolvers
-const resolvers = {
-  Query: {
-    users: () => fakeDb.users,
-    user: args => fakeDb.users.find(user => user.id === args.id),
-    messages: () => fakeDb.messages
-  },
-  Mutation: {
-    addUser: ({email, name}) => {
-      const user = {
-        id: crypto.randomBytes(10).toString('hex'),
-        email,
-        name
-      }
+// // My resolvers
+// const resolvers = {
+//   Query: {
+//     users: () => fakeDb.users,
+//     user: args => fakeDb.users.find(user => user.id === args.id),
+//     messages: () => fakeDb.messages
+//   },
+//   Mutation: {
+//     addUser: ({email, name}) => {
+//       const user = {
+//         id: crypto.randomBytes(10).toString('hex'),
+//         email,
+//         name
+//       }
 
-      fakeDb.users.push(user)
+//       fakeDb.users.push(user)
 
-      return user
-    }
-  },
-  User: {
-    messages: ({id}) => fakeDb.messages.filter(message => message.userId === id)
-  }
-}
+//       return user
+//     }
+//   },
+//   User: {
+//     messages: ({id}) => fakeDb.messages.filter(message => message.userId === id)
+//   }
+// }
 
-const server = new ApolloServer({typeDefs, resolvers})
+// const server = new ApolloServer({typeDefs, resolvers})
 
-server.listen().then((serverInfo) => {
-  console.log(`Apollo Server Listening at ${serverInfo.url}`)
-})
+// server.listen().then((serverInfo) => {
+//   console.log(`Apollo Server Listening at ${serverInfo.url}`)
+// })
 
 //---------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------
