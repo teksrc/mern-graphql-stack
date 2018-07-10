@@ -1,4 +1,4 @@
-// Creating a standalone GraphQL Server
+// Creating a standalone GraphQL Server Using the Apollo Client ApolloServer
 
 const {ApolloServer, gql} = require('apollo-server')
 const crypto = require('crypto') // Generate Ids for Users
@@ -70,6 +70,7 @@ const typeDefs = gql`
   }
 `
 
+// My resolvers
 const resolvers = {
   Query: {
     users: () => fakeDb.users,
@@ -99,6 +100,12 @@ const server = new ApolloServer({typeDefs, resolvers})
 server.listen().then((serverInfo) => {
   console.log(`Apollo Server Listening at ${serverInfo.url}`)
 })
+
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+
+// Express and GraphQL
 
 // const express = require('express') // Node Express server to run
 // const graphqlHttp = require('express-graphql') // Middleware for connecting Express to GraphQL
@@ -262,5 +269,4 @@ server.listen().then((serverInfo) => {
 // #   }
 // # }
 
-// Apollo Server`
 // */
