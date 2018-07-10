@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start dev": "nodemon"
+    "start:dev": "nodemon",
+    "purge": "rm -rf node_modules; yarn"
   },
   "dependencies": {
     "apollo-server": "rc",
-    "graphql": "^0.13.2"
+    "graphql": "^0.13.2",
+    "mongoose": "^5.2.2"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"
