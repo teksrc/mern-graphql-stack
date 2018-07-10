@@ -132,5 +132,33 @@ curl -X POST -H "Content-Type: application/json" -d '{"query": "{users {id} }"}'
 We can make AJAX, ApolloClient, dispatch Redux Action creators, or a MobX fetch equivalent from the Client side to GraphQL to
 query the database specifically to store in the client side assisting with payload performance improvement
 
+Ex:
+
+# {
+#   users {
+#     name
+#     role
+#     messages {
+#       id
+#       body
+#     }
+#   }
+# }
+
+# query {
+#   users {
+#     id
+#     email
+#     name
+#     avatarUrl
+#     role
+#     messages {
+#       id
+#       body
+#       createdAt
+#     }
+#   }
+# }
+
 Apollo Server`
 */
