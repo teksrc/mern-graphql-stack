@@ -10,19 +10,19 @@ Developed by Facebook in 2012, GraphQL is a query language and a server runtime 
 
 **Top 5 Reasons to Use GraphQL:**
 
-https://www.youtube.com/redirect?redir_token=0qTlmq4bqajkIHR5WjXjmGerbSd8MTUzMTI4NDI3OEAxNTMxMTk3ODc4&q=https%3A%2F%2Fblog.graph.cool%2Ftop-5-reasons-to-use-graphql-b60cfa683511&v=HKqbBrl_fKc&event=video_description
+https://www.prisma.io/blog/top-5-reasons-to-use-graphql-b60cfa683511/
 
 **GraphQL spec rundown:**
 
-https://www.youtube.com/redirect?redir_token=0qTlmq4bqajkIHR5WjXjmGerbSd8MTUzMTI4NDI3OEAxNTMxMTk3ODc4&q=https%3A%2F%2Fgithub.com%2Ffacebook%2Fgraphql%23readme&v=HKqbBrl_fKc&event=video_description
+https://github.com/facebook/graphql#readme
 
 **GraphQL Server Basics (schemas, resolvers, etc.):**
 
-https://www.youtube.com/redirect?redir_token=0qTlmq4bqajkIHR5WjXjmGerbSd8MTUzMTI4NDI3OEAxNTMxMTk3ODc4&q=https%3A%2F%2Fblog.graph.cool%2Fgraphql-server-basics-the-schema-ac5e2950214e&v=HKqbBrl_fKc&event=video_description
+https://www.prisma.io/blog/graphql-server-basics-the-schema-ac5e2950214e/
 
 **GraphQL vs. REST:**
 
-https://www.youtube.com/redirect?redir_token=0qTlmq4bqajkIHR5WjXjmGerbSd8MTUzMTI4NDI3OEAxNTMxMTk3ODc4&q=https%3A%2F%2Fdev-blog.apollodata.com%2Fgraphql-vs-rest-5d425123e34b&v=HKqbBrl_fKc&event=video_description
+https://blog.apollographql.com/graphql-vs-rest-5d425123e34b
 
 **Learn GraphQL.js:**
 
@@ -145,7 +145,7 @@ http://graphql.org/graphql-js/
 
 ## MongoDB Dev Setup with Docker
 
-> Note: coulse easily use other free 3rd party cloud providers, such as mLab or Atlas, instead.
+> Note: could easily use other free 3rd party cloud providers such as mLab or Atlas instead.
 
 ```sh
 # Start a MongoDB container on port 27017 and create a 'root' user on the 'admin' database
