@@ -6,6 +6,7 @@ module.exports = gql`
     name: String!
     email: String!
     avatarUrl: String
+    role: String!
     chats: [Chat!]!
   }
 
@@ -14,6 +15,6 @@ module.exports = gql`
   }
 
   extend type Mutation {
-    signUp(name: String!, email: String!, password: String!): User!
+    signUp(name: String!, email: String!, password: String!, role: String!): User!
   }
 `;

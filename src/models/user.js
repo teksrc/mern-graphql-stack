@@ -19,6 +19,10 @@ module.exports = mongoose.model('User', new Schema({
   chats: {
     type: [Schema.Types.ObjectId],
     ref: 'Chat'
+  },
+  role: {
+    type: String,
+    required: true
   }
 }, {
     timestamps: true
