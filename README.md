@@ -143,18 +143,56 @@ http://graphql.org/graphql-js/
   updatedAt  |  Date        |
 ```
 
-## MongoDB Dev Setup with Docker
+# MongoDB Dev Setup with mLab
+
+> Note: You can use the docker setup, however I have found it to work best with Ubuntu. For this project I will be using mLab's AWS sandbox db
+
+## Start by going to mlab.com and sign up for login.
+
+## Once logged in select 'Create New' for MongoDB Deployments
+
+## Select Amazon Web Services (AWS) as the cloud provider and Sandbox as the plan type which is free
+
+## Click continue, then once the sandbox db is created under the name of your choosing select your deployment.
+
+## At the top left you will see two commands missing actual login information showing how you can connect to
+1) The MongoDB shell, open up a CLI for ex: iTerm or standard Terminal accessing db from any location with the appropriate criteria.
+2) Connect using a driver via the standard MongoDB URI (This is what we will use to set our server.js file to connect to the mLab MongoDB database)
+
+## yarn add dotenv at the root of your directory, create a .env file, add .env to your .gitignore file, and in your server.js file add:
+
+```
+require('dotenv').config();
+```
+
+## In the env file pase SECRET=''
+
+## Next, in mLab interface of the database you created select Users tab and Add database user
+Give your user a name of admin or administrator and give it a good password, ensure you do not lose this password or that it is not easily guessed like 'password123'. Ensure that read only is not selected.
+
+## Inside the strings paste the mLab MongoDB URI and replace the <dbuser> and <dbpassword> with the admin user name and the admin password you created. This .env SECRET url will remain private.
+
+## Next, in the Server.js or Index.js file where dotenv was required we connect via Mongoose using our secret env variable
+
+```
+mongoose
+  .connect(process.env.SECRET)
+```
+
+
+
+# MongoDB Dev Setup with Docker (Alternative Option)
 
 > Note: could easily use other free 3rd party cloud providers such as mLab or Atlas instead.
 
 ```sh
-# Start a MongoDB container on port 27017 and create a 'root' user on the 'admin' database
+## Start a MongoDB container on port 27017 and create a 'root' user on the 'admin' database
 docker run -d --name mongodb -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
 
-# Run the mongo CLI client on the container as 'root' against 'admin' database and connect to 'chat'
+## Run the mongo CLI client on the container as 'root' against 'admin' database and connect to 'chat'
 docker exec -it mongodb mongo -u root -p secret --authenticationDatabase admin chat
 
-# Inside the client, create an admin user for the 'chat' database
+## Inside the client, create an admin user for the 'chat' database
 db.createUser({
   user: 'admin', pwd: 'secret', roles: ['readWrite', 'dbAdmin']
 })
