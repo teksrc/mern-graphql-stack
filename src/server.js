@@ -1,44 +1,53 @@
 const mongoose = require('mongoose');
-const {ApolloServer, gql} = require('apollo-server');
+const {ApolloServer} = require('apollo-server');
+// const {ApolloServer, gql} = require('apollo-server');
+const {typeDefs, resolvers} = require('./schema');
 require('dotenv').config();
 
 mongoose
   .connect(process.env.SECRET)
-  .then(() => {
+    .then(() => new ApolloServer({typeDefs, resolvers}).listen())
+    .then(({url}) => {
+      console.log(`🚀  Server ready at ${url}`);
+    })
+    .catch(console.error);
+
+// Save dummy code from docs to ensure requests still work when desired
+  /* .then(() => {
     // This is a collection of books I'll be able to query
     // the GraphQL server for.  A more complete example might fetch
     // from an existing data source like a REST API or database.
     const books = [
       {
-        title: "Harry Potter and the Chamber of Secrets",
-        author: "J.K. Rowling"
+        title: 'Harry Potter and the Chamber of Secrets',
+        author: 'J.K. Rowling'
       },
       {
-        title: "Jurassic Park",
-        author: "Michael Crichton"
+        title: 'Jurassic Park',
+        author: 'Michael Crichton'
       }
     ];
 
-    // Type definitions define the "shape" of my data and specify
+    // Type definitions define the 'shape' of my data and specify
     // which ways the data can be fetched from the GraphQL server.
     const typeDefs = gql`
       # Comments in GraphQL are defined with the hash (#) symbol.
 
-      # This "Book" type can be used in other type declarations.
+      # This 'Book' type can be used in other type declarations.
       type Book {
         title: String
         author: String
       }
 
-      # The "Query" type is the root of all GraphQL queries.
-      # (A "Mutation" type will be covered later on.)
+      # The 'Query' type is the root of all GraphQL queries.
+      # (A 'Mutation' type will be covered later on.)
       type Query {
         books: [Book]
       }
     `;
 
     // Resolvers define the technique for fetching the types in the
-    // schema.  I'll retrieve books from the "books" array above.
+    // schema.  I'll retrieve books from the 'books' array above.
     const resolvers = {
       Query: {
         books: () => books
@@ -56,4 +65,4 @@ mongoose
       console.log(`🚀  Server ready at ${url}`);
     });
   })
-  .catch(err => console.error);
+  .catch(err => console.error); */
