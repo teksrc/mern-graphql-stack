@@ -61,14 +61,14 @@ require ('./src/server')
 //     addUser(email: String!, name: String, role: String!): User
 //   }
 
-//   type User {
-//     id: ID!
-//     email: String!
-//     name: String
-//     avatarUrl: String
-//     role: String
-//     messages: [Message!]!
-//   }
+  // type User {
+  //   id: ID!
+  //   email: String!
+  //   name: String
+  //   avatarUrl: String
+  //   role: String
+  //   messages: [Message!]!
+  // }
 
 //   type Message {
 //     id: ID!

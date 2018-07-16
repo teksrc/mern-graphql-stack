@@ -8,7 +8,8 @@
     "purge": "rm -rf node_modules; yarn"
   },
   "dependencies": {
-    "apollo-server": "rc",
+    "apollo-server": "2.0.0-rc.5",
+    "dotenv": "^6.0.0",
     "graphql": "^0.13.2",
     "mongoose": "^5.2.2"
   },
